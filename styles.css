@@ -1,7 +1,7 @@
 body,html {
   font-family:Oswald;
   height:100%;
-  font-size:24px;
+  font-size:32px;
   margin-left:5px;
   margin-right:5px;
   margin-top:0px;
@@ -22,7 +22,9 @@ hr {
   margin-right: 0;
 }
 
-
+#top {
+  margin-top:10px;
+}
 
 #middle{
   display:flex;
@@ -33,23 +35,24 @@ hr {
   margin-bottom:10px;
 }
 
-#username {
+#usernamecontainer {
   float:left;
   display:flex;
   align-items:flex-end;
-  height:128px;
+  height:calc(192px + 10px);
   font-size:36px;
-  margin:10px;
+  margin-left:20px;
 }
 
-#userimage {
-  margin:10px;
+#userimagecontainer {
   float:left;
+  height:192px;
 }
 
-#userimage img {
-  height:128px;
-  width:128px;
+
+#userimagecontainer img {
+  height:192px;
+  width:192px;
 }
 
 .taskcontainer {
@@ -105,7 +108,8 @@ hr {
   display:flex;
   flex-direction:column;
   flex:1;
-  margin-bottom:20px;
+  margin-bottom:10px;
+  margin-top:10px;
   -webkit-box-shadow:  5px 5px 2px 0px rgba(0,0,0,0.50);
   -moz-box-shadow:  5px 5px 2px 0px rgba(0,0,0,0.50);
   box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.50);

@@ -1,0 +1,112 @@
+body,html {
+  font-family:Oswald;
+  height:100%;
+  font-size:24px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+body {
+  display:flex;
+  flex-direction:column;
+}
+
+hr {
+  clear:both;
+  color: gray; 
+  border-style: inset; 
+  border-width: 1px; 
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+#middle{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+#bottom {
+  margin-bottom:10px;
+}
+
+#username {
+  float:left;
+  display:flex;
+  align-items:flex-end;
+  height:128px;
+  font-size:36px;
+  margin:10px;
+}
+
+#userimage {
+  margin:10px;
+  float:left;
+}
+
+#userimage img {
+  height:128px;
+  width:128px;
+}
+
+.taskcontainer {
+  height:128px;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  border:2px solid black;
+  position:relative;
+  flex:1;
+}
+
+.tasktext {
+    color: black; 
+    opacity:0.6;
+    flex: 1 auto;
+    font-size:32px;
+    padding:20px;
+    z-index:2;
+}
+
+.taskcontainerprioritytext {
+  flex-basis:100px;
+}
+
+.taskcontainerpercentagetext {
+  text-align:center;
+}
+
+.taskcontainercounttext {
+    text-align:right;
+}
+
+.taskcontainerpercentag {
+  height:100%;
+  position:absolute;
+  width:calc(50% - 20px);
+}
+
+#hightasks > .taskcontainer > .taskcontainerpercentag {
+  background-color:#F44336;
+}
+
+#mediumtasks > .taskcontainer > .taskcontainerpercentag {
+  background-color:#03A9F4;
+}
+
+#lowtasks > .taskcontainer > .taskcontainerpercentag {
+  background-color:#4CAF50;
+}
+
+.tasksslide {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  margin-bottom:20px;
+  -webkit-box-shadow:  5px 5px 2px 0px rgba(0,0,0,0.50);
+  -moz-box-shadow:  5px 5px 2px 0px rgba(0,0,0,0.50);
+  box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.50);
+}

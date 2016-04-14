@@ -1,5 +1,6 @@
 $(function() {
-  
+    
+    return;
     var serverUrl = "http://remote.workbook.dk:34010/";
     var userName = "dlj";
     var password = "qwer";

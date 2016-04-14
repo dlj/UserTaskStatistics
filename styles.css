@@ -1,7 +1,7 @@
 body,html {
   font-family:Oswald;
   height:100%;
-  font-size:32px;
+  font-size:2vw;
   margin-left:5px;
   margin-right:5px;
   margin-top:0px;
@@ -24,39 +24,32 @@ hr {
 
 #top {
   margin-top:10px;
+  flex: 1 1;
+  display:flex;
 }
 
 #middle{
   display:flex;
   flex-direction:column;
-  flex:1;
+  flex:2 2;
 }
 #bottom {
   margin-bottom:10px;
+    flex: 1 1;
 }
 
 #usernamecontainer {
-  float:left;
-  display:flex;
-  align-items:flex-end;
-  height:calc(192px + 10px);
-  font-size:36px;
-  margin-left:20px;
+   align-self : flex-end;
 }
 
 #userimagecontainer {
-  float:left;
-  height:192px;
-}
-
-
-#userimagecontainer img {
-  height:192px;
-  width:192px;
+  background-image : url("images/user.jpg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  flex: 1 1;
 }
 
 .taskcontainer {
-  height:128px;
   border-radius:5px;
   display:flex;
   align-items:center;
@@ -68,14 +61,12 @@ hr {
 .tasktext {
     color: black; 
     opacity:0.6;
-    flex: 1 auto;
-    font-size:32px;
+    flex:2;
     padding:20px;
     z-index:2;
 }
 
 .taskcontainerprioritytext {
-  flex-basis:100px;
 }
 
 .taskcontainerpercentagetext {
@@ -89,7 +80,7 @@ hr {
 .taskcontainerpercentag {
   height:100%;
   position:absolute;
-  width:calc(50% - 20px);
+  width:50%;
 }
 
 #hightasks > .taskcontainer > .taskcontainerpercentag {

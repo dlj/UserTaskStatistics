@@ -9,8 +9,7 @@ body,html {
 }
 
 body {
-  display:flex;
-  flex-direction:column;
+height:100%;
 }
 
 hr {
@@ -20,6 +19,42 @@ hr {
   border-width: 1px; 
   margin-left: 0;
   margin-right: 0;
+}
+
+.inputalert {
+  border:1px solid red;
+}
+
+#maintaskcontainer {
+  flex-direction:column;
+  display:none;  
+  height:100%;
+}
+
+#login {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:absolute;
+  width:100%;
+  height:100%;
+  justify-content:center;
+}
+
+#login input {
+  height:2vw;
+  width:30%;
+}
+
+#login > #loginbutton {
+  width:25%;
+  text-align:center;
+}
+
+#login > #loginbutton:hover {
+  -webkit-text-shadow:  4px 4px 2px rgba(150, 150, 150, 1);
+  -moz-text-shadow:  4px 4px 2px rgba(150, 150, 150, 1);
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 }
 
 #top {

@@ -1,6 +1,4 @@
 $(function() {
-    
-    return;
     var serverUrl = "http://remote.workbook.dk:34010/";
     var userName = "dlj";
     var password = "qwer";
@@ -9,7 +7,13 @@ $(function() {
     
     var that = this;
   $( document ).ajaxError(function(event, jqxhr, settings, thrownError) {
-    debugger;
+    var status = jqxhr.status;
+    if (status === 0)
+    {
+      $("#login").show();
+      $("#maintaskcontainer").css("display", "none");
+    }
+      debugger;
   });
   
   // GLobal ajax setup. 
@@ -21,8 +25,39 @@ $(function() {
     }
   });
 
+  $("#loginbutton").click(function() {
+    
+    // This could be done in a more generic way.
+    if ($("#serverinput").val().length === 0)
+      $("#serverinput").addClass("inputalert");
+
+    if ($("#passwordinput").val().length === 0)
+      $("#passwordinput").addClass("inputalert");
+      
+    if ($("#usernameinput").val().length === 0)
+      $("#usernameinput").addClass("inputalert");
+    
+    serverUrl = $("#serverinput").val();
+    password = $("#passwordinput").val();
+    userName = $("#usernameinput").val();
+    
+    if (serverUrl.length === 0 || password.length === 0 || userName === 0)
+      return;
+    
+    if (serverUrl.indexOf("http") === -1)
+      serverUrl = "http://" + serverUrl;
+    
+    // endsWith not fully supported 
+    if (serverUrl[serverUrl.length - 1] !== "/")
+      serverUrl = serverUrl + "/";
+    
+    $("#login").hide();
+        
+    startStatictics();
+  });
+
    // Get all Employees
-   
+   function startStatictics() {
     $.ajax({
         type: "GET",
         url: serverUrl + "api/resource/employees?Active=true"
@@ -32,6 +67,7 @@ $(function() {
       //All employees has been loaded. Start the timer.
        setInterval($.proxy(changeUser,that), 10000);
     });
+   }
                 
 
 
@@ -53,9 +89,10 @@ $(function() {
      }).done(function (data) {
        if (data) {
          window.requestAnimationFrame(function() {
-            $("#username").html(data.Name + "(@" + data.Initials  + ")");
-            $("#userimagecontainer img").attr("src", serverUrl +  "/api/resource/" + data.Id + "/picture/256");
-            $(document.body).animate({opacity: 1}, 500);
+            $("#usernamecontainer").html(data.Name + "(@" + data.Initials  + ")");
+            $("#userimagecontainer").css("background-image", "url(" + serverUrl +  "/api/resource/" + data.Id + "/picture/256)");
+            $("#maintaskcontainer").css("display", "flex");
+            $("#maintaskcontainer").animate({opacity: 1}, 500);
           });
        }
      });
